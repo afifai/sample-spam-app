@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ghcr.io/railwayapp/cli:latest
+    runs-on: ghcr.io/railwayapp/cli:3.15.3
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
