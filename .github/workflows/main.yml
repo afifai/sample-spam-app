@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ghcr.io/railwayapp/cli:latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -23,10 +23,6 @@ jobs:
         pip install -r requirements.txt 
 
     - name: Deploy to Railway
-      env:
-        RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-        RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_NAME }}
       run: |
-        curl -sL https://raw.githubusercontent.com/railwayapp/cli/refs/heads/master/install.sh | sh
         railway init --name "$RAILWAY_PROJECT_NAME"
         railway up --detach
