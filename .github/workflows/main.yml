@@ -25,7 +25,7 @@ jobs:
     - name: Deploy to Railway
       env:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-        RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_NAME }}
+        RAILWAY_PROJECT_NAME: ${{ secrets.RAILWAY_PROJECT_NAME }}
       run: |
         curl -sL https://raw.githubusercontent.com/railwayapp/cli/refs/heads/master/install.sh | sh
         RAILWAY_TOKEN=$RAILWAY_TOKEN railway init --name "$RAILWAY_PROJECT_NAME"
