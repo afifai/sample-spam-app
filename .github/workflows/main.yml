@@ -29,4 +29,4 @@ jobs:
       run: |
         curl -sL https://raw.githubusercontent.com/railwayapp/cli/refs/heads/master/install.sh | sh
         railway init --name "$RAILWAY_PROJECT_NAME"
-        railway up --detach
+        RAILWAY_TOKEN=$RAILWAY_TOKEN railway up --detach
