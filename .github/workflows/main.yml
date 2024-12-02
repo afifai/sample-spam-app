@@ -27,7 +27,7 @@ jobs:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_NAME }}
       run: |
-        curl -sL https://cli.railway.app/install.sh | sh
+        curl -sL https://raw.githubusercontent.com/railwayapp/cli/refs/heads/master/install.sh | sh
         railway login --token $RAILWAY_TOKEN
         railway init --name $RAILWAY_PROJECT_ID
         railway up --detach
